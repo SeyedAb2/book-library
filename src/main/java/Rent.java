@@ -6,17 +6,17 @@ public class Rent extends File implements Library,Serializable {
 
     private Book book;
     private Member member;
-    private String date;
+    private int date;
 
-    public Rent(Book book, Member member, String date) {
+    public Rent(Book book, Member member, int date) {
         this.book = book;
         this.member = member;
         this.date = date;
     }
-    public static Rent getRent(String date) {
+    public static Rent getRent(int date) {
         Rent rent = null;
         for (Rent RentDetail : Rents) {
-            if (Objects.equals(RentDetail.getDate(), date)) {
+            if (RentDetail.getDate() == date) {
                 rent = RentDetail;
                 break;
             }
@@ -35,10 +35,10 @@ public class Rent extends File implements Library,Serializable {
     public void setMember(Member member) {
         this.member = member;
     }
-    public String getDate() {
+    public int getDate() {
         return date;
     }
-    public void setDate(String  date) {
+    public void setDate(int  date) {
         this.date = date;
     }
     public static void addRent() {
@@ -51,10 +51,12 @@ public class Rent extends File implements Library,Serializable {
             System.out.print("Enter member id: -> ");
             String ID_MEMBER = input.nextLine();
             Member member = Member.getMember(Integer.parseInt(ID_MEMBER));
+//            System.out.println(member);
+//            System.out.println(member.toString());
             System.out.print("Enter date: -> ");
             String date = input.nextLine();
             book.setBorrowBook(true);
-            Rent rent = new Rent(book, member, date);
+            Rent rent = new Rent(book, member, Integer.parseInt(date));
             rent.save();
         } catch (Exception e) {
             System.out.println(e.getMessage());

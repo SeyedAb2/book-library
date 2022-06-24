@@ -7,7 +7,7 @@ public class Member extends Entity {
     private static int static_member_id =1;
     private int Member_id;
 
-    public Member(String entityName, String entityNationalCode) {
+    public Member(String entityName, int entityNationalCode) {
         super(entityName, entityNationalCode);
         this.Member_id = static_member_id;
         static_member_id++;
@@ -40,24 +40,19 @@ public class Member extends Entity {
             System.out.print("Enter name: -> ");
             String name = inputName.nextLine();
             System.out.print("Enter nationalCode: -> ");
-            String nationalCode = input.nextLine();
+            int nationalCode = input.nextInt();
             Member member = new Member(name, nationalCode);
             member.save();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
-
     public  void remove() {
         File.remove(this);
     }
-
-
     public void save() {
         File.save(this);
     }
-
-
     public void insert() {
         try {
             FileOutputStream File_output = new FileOutputStream(member_url);

@@ -62,7 +62,7 @@ public class MainCli {
                 } else if(input==9) {
                     System.out.println("Enter nationalCode: -> ");
                     String v = cli.nextLine();
-                    Manager manager= Manager.getManager(v);
+                    Manager manager= Manager.getManager(Integer.parseInt(v));
                     manager.remove();
                 } else if(input==10) {
                     System.out.println("Enter id: -> ");
@@ -78,7 +78,7 @@ public class MainCli {
                 } else if(input==12) {
                     System.out.println("Enter date: -> ");
                     int q = cli.nextInt();
-                    Rent rent= Rent.getRent(String.valueOf(q));
+                    Rent rent= Rent.getRent(q);
                     rent.remove();
                 } else if(input==13) {
                     System.exit(0);
