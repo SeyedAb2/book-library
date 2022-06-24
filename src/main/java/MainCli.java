@@ -36,7 +36,7 @@ public class MainCli {
         System.out.print("Command> ");
     }
     public void run(){
-        System.out.println("Welcome to your Library");
+        System.out.println("Welcome to Your Library");
         System.out.println("We hope you enjoy being here");
         System.out.println("What are you going to do? Just choose an item");
         try {
