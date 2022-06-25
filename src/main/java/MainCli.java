@@ -46,7 +46,7 @@ public class MainCli {
                 if (input==1) {
                     Manager.addManager();
                 } else if(input==2) {
-                    Member.addMember();
+                    Member.addMember() ;
                 } else if(input==3) {
                     Book.addBook();
                 } else if(input==4) {
