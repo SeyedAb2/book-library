@@ -74,7 +74,7 @@ public class MainCli {
     }
     public void search(){
         System.out.println("+----+--------------------+");
-        System.out.println("| id |  search description  |");
+        System.out.println("| id |  search description|");
         System.out.println("+----+--------------------+");
         System.out.println("| 1  |  Search in Mangers |");
         System.out.println("+----+--------------------+");
@@ -309,25 +309,11 @@ public class MainCli {
                     while(true){
                         search();
                         int search_input = cli.nextInt();
-                        if(search_input==1){
-                            Manager.show();
-                        }
-                        else if (search_input==2){
-                            Member.show();
-                        }
-                        else if (search_input==3){
-                            Book.show();
-                        }
-                        else if (search_input==4){
-                            JavaSQL.select_book();
-                            JavaSQL.select_book();
-                            Rent.show();
-                        }
-                        else if (search_input==0){
+                        if (search_input==0){
                             break;
                         }
                         else{
-                            System.out.println("invalid option");
+                            Search.searchRequest(search_input);
                         }
                     }
                 }
