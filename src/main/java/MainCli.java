@@ -58,32 +58,37 @@ public class MainCli {
                 } else if(input==7) {
                     Book.show();
                 } else if(input==8) {
+                    JavaSQL.select_book();
+                    JavaSQL.select_book();
                     Rent.show();
                 } else if(input==9) {
-                    System.out.println("Enter nationalCode: -> ");
-                    String v = cli.nextLine();
-                    Manager manager= Manager.getManager(v);
+                    JavaSQL.select_manager();
+                    System.out.print("Enter manager nationalCode: -> ");
+                    int v = cli.nextInt();
+                    Manager manager = Manager.getManager(v);
                     manager.remove();
                 } else if(input==10) {
-                    System.out.println("Enter id: -> ");
+                    JavaSQL.select_member();
+                    System.out.print("Enter member nationalCode: -> ");
                     int b = cli.nextInt();
                     Member member= Member.getMember(b);
                     member.remove();
                 } else if(input==11) {
+                    JavaSQL.select_book();
                     System.out.print("Enter id: -> ");
                     int o= cli.nextInt();
                     Book book= Book.getBook(o);
-
                     book.remove();
                 } else if(input==12) {
-                    System.out.println("Enter date: -> ");
+                    JavaSQL.select_rent();
+                    System.out.print("Enter date: -> ");
                     int q = cli.nextInt();
                     Rent rent= Rent.getRent(String.valueOf(q));
                     rent.remove();
                 } else if(input==13) {
                     System.exit(0);
                 } else {
-                    System.out.println("invalid option");
+                    System.out.print("invalid option");
                 }
             }
         }catch (Exception e) {
@@ -92,10 +97,6 @@ public class MainCli {
 
     }
     public static void main(String[] args) {
-        Manager.select();
-        Member.select();
-        Book.select();
-        Rent.select();
         new MainCli().run();
     }
 }
