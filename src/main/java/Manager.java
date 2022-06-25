@@ -1,17 +1,17 @@
 
 import java.io.*;
-import java.util.Objects;
+
 import java.util.Scanner;
 
 public class Manager extends Entity {
 
-    public Manager(String entityName, String entityNationalCode) {
+    public Manager(String entityName, int entityNationalCode) {
         super(entityName, entityNationalCode);
     }
-    public static Manager getManager(String national_code) {
+    public static Manager getManager(int national_code) {
         Manager manager = null;
         for (Manager managerDetail : File.Managers) {
-            if (Objects.equals(managerDetail.getEntityNationalCode(), national_code)) {
+            if (managerDetail.getEntityNationalCode() == national_code) {
                 manager = managerDetail;
                 break;
             }
@@ -28,7 +28,7 @@ public class Manager extends Entity {
             String name = input.nextLine();
             System.out.print("Enter nationalCode: -> ");
             String nationalCode = input.nextLine();
-            Manager manager = new Manager(name, nationalCode);
+            Manager manager = new Manager(name, Integer.parseInt(nationalCode));
             manager.save();
         } catch (Exception e) {
             System.out.println(e.getMessage());
