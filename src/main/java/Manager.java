@@ -44,7 +44,7 @@ public class Manager extends Entity {
     public static void show() {
         JavaSQL.select_manager();
         for (Manager manager : JavaSQL.Managers) {
-            System.out.println(manager.toString());
+            System.out.println(manager.toString()) ;
         }
     }
 
