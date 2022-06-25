@@ -320,7 +320,7 @@ public class MainCli {
 
                 else if(input==0){break;}
                 else {
-                    System.out.print("invalid option");
+                    System.out.print("invalid option") ;
                 }
             }
         }catch (Exception e) {
