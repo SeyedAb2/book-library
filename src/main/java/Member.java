@@ -59,12 +59,9 @@ public class Member extends Entity {
             System.out.println(e.getMessage());
         }
     }
-
     public  void remove() {
         JavaSQL.remove(this);
     }
-
-
     public void save() {
         JavaSQL.save(this);
     }
