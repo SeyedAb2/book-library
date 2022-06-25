@@ -36,7 +36,7 @@ public class MainCli {
         System.out.print("Command> ");
     }
     public void run(){
-        System.out.println("Welcome to Your Library");
+        System.out.println("Welcome to your Library");
         System.out.println("We hope you enjoy being here");
         System.out.println("What are you going to do? Just choose an item");
         try {
@@ -46,7 +46,7 @@ public class MainCli {
                 if (input==1) {
                     Manager.addManager();
                 } else if(input==2) {
-                    Member.addMember() ;
+                    Member.addMember();
                 } else if(input==3) {
                     Book.addBook();
                 } else if(input==4) {
@@ -83,7 +83,7 @@ public class MainCli {
                     JavaSQL.select_rent();
                     System.out.print("Enter date: -> ");
                     int q = cli.nextInt();
-                    Rent rent= Rent.getRent(q);
+                    Rent rent= Rent.getRent(String.valueOf(q));
                     rent.remove();
                 } else if(input==13) {
                     System.exit(0);

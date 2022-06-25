@@ -7,15 +7,14 @@ public class Rent extends File implements Library,Serializable {
     private Book book;
     private Member member;
     private String date;
-    static int b;
-    static int m;
+     static int b;
+     static int m;
     public Rent(Book book, Member member, String date) {
-
         this.book = book;
         this.member = member;
         this.date = date;
     }
-    public static Rent getRent(int date) {
+    public static Rent getRent(String date) {
         Rent rent = null;
         for (Rent RentDetail : JavaSQL.Rents) {
             if (Objects.equals(RentDetail.getDate(), date)) {
@@ -37,10 +36,10 @@ public class Rent extends File implements Library,Serializable {
     public void setMember(Member member) {
         this.member = member;
     }
-    public int getDate() {
+    public String getDate() {
         return date;
     }
-    public void setDate(int  date) {
+    public void setDate(String  date) {
         this.date = date;
     }
     public static void addRent() {
@@ -54,8 +53,6 @@ public class Rent extends File implements Library,Serializable {
             System.out.print("Enter member National Code: -> ");
             String ID_MEMBER = input.nextLine();
             Member member = Member.getMember(Integer.parseInt(ID_MEMBER));
-//            System.out.println(member);
-//            System.out.println(member.toString());
             System.out.print("Enter date: -> ");
             String date = input.nextLine();
             Rent rent = new Rent(book,member,date);
