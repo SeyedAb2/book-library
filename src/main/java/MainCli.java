@@ -6,6 +6,23 @@ public class MainCli {
         System.out.println("+----+--------------------+");
         System.out.println("| id |  menu description  |");
         System.out.println("+----+--------------------+");
+        System.out.println("| 1  |  Create And Add    |");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 2  |  Show Table Lists  |");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 3  |  Remove Table Item |");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 4  |  Search Console    |");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 0  |  Exit              |");
+        System.out.println("+----+--------------------+");
+        System.out.println("Please Select Menu option");
+        System.out.print("Command> ");
+    }
+    public void add(){
+        System.out.println("+----+--------------------+");
+        System.out.println("| id |  add description   |");
+        System.out.println("+----+--------------------+");
         System.out.println("| 1  |  Add Manager       |");
         System.out.println("+----+--------------------+");
         System.out.println("| 2  |  Add Member        |");
@@ -14,25 +31,63 @@ public class MainCli {
         System.out.println("+----+--------------------+");
         System.out.println("| 4  |  Add Rent          |");
         System.out.println("+----+--------------------+");
-        System.out.println("| 5  |  show Manager      |");
+        System.out.println("| 0  |  Back To Menu      |");
         System.out.println("+----+--------------------+");
-        System.out.println("| 6  |  show Member       |");
+        System.out.println("What you want to add ?");
+        System.out.print("Command> ");
+    }
+    public void show(){
         System.out.println("+----+--------------------+");
-        System.out.println("| 7  |  show book         |");
+        System.out.println("| id |  show description  |");
         System.out.println("+----+--------------------+");
-        System.out.println("| 8  |  show Rent         |");
+        System.out.println("| 1  |  Show Manager List |");
         System.out.println("+----+--------------------+");
-        System.out.println("| 9  |  remove Manager    |");
+        System.out.println("| 2  |  Show Member List  |");
         System.out.println("+----+--------------------+");
-        System.out.println("| 10 |  remove Member     |");
+        System.out.println("| 3  |  Show Book List    |");
         System.out.println("+----+--------------------+");
-        System.out.println("| 11 |  remove Book       |");
+        System.out.println("| 4  |  Show Rent List    |");
         System.out.println("+----+--------------------+");
-        System.out.println("| 12 |  remove Rent       |");
+        System.out.println("| 0  |  Back To Menu      |");
         System.out.println("+----+--------------------+");
-        System.out.println("| 13 |  exit              |");
+
+        System.out.println("Which list you want to see ?");
+        System.out.print("Command> ");
+    }
+    public void remove(){
         System.out.println("+----+--------------------+");
-        System.out.println("Please Select Menu option");
+        System.out.println("| id |  remove description|");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 1  |  Remove Manager    |");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 2  |  Remove Member     |");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 3  |  Remove Book       |");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 4  |  Remove Rent       |");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 0  |  Back To Menu      |");
+        System.out.println("+----+--------------------+");
+
+        System.out.println("Do You Want Remove Something ?");
+        System.out.print("Command> ");
+    }
+    public void search(){
+        System.out.println("+----+--------------------+");
+        System.out.println("| id |  search description|");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 1  |  Search in Mangers |");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 2  |  Search in Member  |");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 3  |  Search in Book    |");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 4  |  Search in Rent    |");
+        System.out.println("+----+--------------------+");
+        System.out.println("| 0  |  Back To Menu      |");
+        System.out.println("+----+--------------------+");
+
+        System.out.println("what are you looking for ?");
         System.out.print("Command> ");
     }
     public void run(){
@@ -44,57 +99,233 @@ public class MainCli {
                 menu();
                 int input = cli.nextInt();
                 if (input==1) {
-                    Manager.addManager();
-                } else if(input==2) {
-                    Member.addMember();
-                } else if(input==3) {
-                    Book.addBook();
-                } else if(input==4) {
-                    Rent.addRent();
-                } else if(input==5) {
-                    Manager.show();
-                } else if(input==6) {
-                    Member.show();
-                } else if(input==7) {
-                    Book.show();
-                } else if(input==8) {
-                    JavaSQL.select_book();
-                    JavaSQL.select_book();
-                    Rent.show();
-                } else if(input==9) {
-                    JavaSQL.select_manager();
-                    System.out.print("Enter manager nationalCode: -> ");
-                    int v = cli.nextInt();
-                    Manager manager = Manager.getManager(v);
-                    manager.remove();
-                } else if(input==10) {
-                    JavaSQL.select_member();
-                    System.out.print("Enter member nationalCode: -> ");
-                    int b = cli.nextInt();
-                    Member member= Member.getMember(b);
-                    member.remove();
-                } else if(input==11) {
-                    JavaSQL.select_book();
-                    System.out.print("Enter id: -> ");
-                    int o= cli.nextInt();
-                    Book book= Book.getBook(o);
-                    book.remove();
-                } else if(input==12) {
-                    JavaSQL.select_rent();
-                    System.out.print("Enter date: -> ");
-                    int q = cli.nextInt();
-                    Rent rent= Rent.getRent(String.valueOf(q));
-                    rent.remove();
-                } else if(input==13) {
-                    System.exit(0);
-                } else {
+                    while(true){
+                        add();
+                        int add_input = cli.nextInt();
+                        if(add_input==1){
+                            Manager.addManager();
+                        }
+                        else if (add_input==2){
+                            Member.addMember();
+                        }
+                        else if (add_input==3){
+                            Book.addBook();
+                        }
+                        else if (add_input==4){
+                            while(true){
+                                System.out.println("+----+--------------------+");
+                                System.out.println("| 1  |  Add Rent          |");
+                                System.out.println("+----+--------------------+");
+                                System.out.println("| 2  |  Show Books List   |");
+                                System.out.println("+----+--------------------+");
+                                System.out.println("| 3  |  Show Members List |");
+                                System.out.println("+----+--------------------+");
+                                System.out.println("| 0  |  Back To Menu      |");
+                                System.out.println("+----+--------------------+");
+                                System.out.print("Command> ");
+                                int r = cli.nextInt();
+                                if(r==1){
+                                    Rent.addRent();
+                                }
+                                else if(r==2){
+                                    Book.show();
+                                }
+                                else if(r==3){
+                                    Member.show();
+                                }
+                                else if(r==0){
+                                    break;
+                                }
+                                else{
+                                    System.out.println("invalid option");
+                                }
+                            }
+                        }
+                        else if (add_input==0){
+                            break;
+                        }
+                        else{
+                            System.out.println("invalid option");
+                        }
+                    }
+                }
+                else if(input==2) {
+                    while(true){
+                        show();
+                        int show_input = cli.nextInt();
+                        if(show_input==1){
+                            Manager.show();
+                        }
+                        else if (show_input==2){
+                            Member.show();
+                        }
+                        else if (show_input==3){
+                            Book.show();
+                        }
+                        else if (show_input==4){
+                            JavaSQL.select_book();
+                            JavaSQL.select_book();
+                            Rent.show();
+                        }
+                        else if (show_input==0){
+                            break;
+                        }
+                        else{
+                            System.out.println("invalid option");
+                        }
+                    }
+                }
+                else if(input==3){
+                    while(true){
+                        remove();
+                        System.out.print("Command> ");
+                        int remove_input = cli.nextInt();
+                        if(remove_input==1){
+                            while (true){
+                                System.out.println("+----+-----------------------+");
+                                System.out.println("| 1  |  Remove Manager       |");
+                                System.out.println("+----+-----------------------+");
+                                System.out.println("| 2  |  Show Manager List    |");
+                                System.out.println("+----+-----------------------+");
+                                System.out.println("| 0  |  Back To Remove List  |");
+                                System.out.println("+----+-----------------------+");
+                                System.out.print("Command> ");
+                                int item = cli.nextInt();
+                                if(item==1){
+                                    JavaSQL.select_manager();
+                                    System.out.print("Enter manager nationalCode: -> ");
+                                    int v = cli.nextInt();
+                                    Manager manager = Manager.getManager(v);
+                                    manager.remove();
+                                }
+                                else if(item==2){
+                                    Manager.show();
+                                }
+                                else if(item==0){
+                                    break;
+                                }
+                                else{
+                                    System.out.println("invalid option");
+                                }
+                            }
+                        }
+                        else if (remove_input==2){
+                            while (true){
+                                System.out.println("+----+-----------------------+");
+                                System.out.println("| 1  |  Remove Member        |");
+                                System.out.println("+----+-----------------------+");
+                                System.out.println("| 2  |  Show Member List     |");
+                                System.out.println("+----+-----------------------+");
+                                System.out.println("| 0  |  Back To Remove List  |");
+                                System.out.println("+----+-----------------------+");
+                                System.out.print("Command> ");
+                                int item = cli.nextInt();
+                                if(item==1){
+                                    JavaSQL.select_member();
+                                    System.out.print("Enter member nationalCode: -> ");
+                                    int b = cli.nextInt();
+                                    Member member= Member.getMember(b);
+                                    member.remove();
+                                }
+                                else if(item==2){
+                                    Member.show();
+                                }
+                                else if(item==0){
+                                    break;
+                                }
+                                else{
+                                    System.out.println("invalid option");
+                                }
+                            }
+                        }
+                        else if (remove_input==3){
+                            while (true){
+                                System.out.println("+----+-----------------------+");
+                                System.out.println("| 1  |  Remove Book          |");
+                                System.out.println("+----+-----------------------+");
+                                System.out.println("| 2  |  Show Book List       |");
+                                System.out.println("+----+-----------------------+");
+                                System.out.println("| 0  |  Back To Remove List  |");
+                                System.out.println("+----+-----------------------+");
+                                System.out.print("Command> ");
+                                int item = cli.nextInt();
+                                if(item==1){
+                                    JavaSQL.select_book();
+                                    System.out.print("Enter id: -> ");
+                                    int o= cli.nextInt();
+                                    Book book= Book.getBook(o);
+                                    book.remove();
+                                }
+                                else if(item==2){
+                                    Book.show();
+                                }
+                                else if(item==0){
+                                    break;
+                                }
+                                else{
+                                    System.out.println("invalid option");
+                                }
+                            }
+                        }
+                        else if (remove_input==4){
+                            while (true){
+                                System.out.println("+----+-----------------------+");
+                                System.out.println("| 1  |  Remove Rent          |");
+                                System.out.println("+----+-----------------------+");
+                                System.out.println("| 2  |  Show Rent List       |");
+                                System.out.println("+----+-----------------------+");
+                                System.out.println("| 0  |  Back To Remove List  |");
+                                System.out.println("+----+-----------------------+");
+                                System.out.print("Command> ");
+                                int item = cli.nextInt();
+                                if(item==1){
+                                    JavaSQL.select_rent();
+                                    System.out.print("Enter date: -> ");
+                                    int q = cli.nextInt();
+                                    Rent rent= Rent.getRent(String.valueOf(q));
+                                    rent.remove();
+                                }
+                                else if(item==2){
+                                    JavaSQL.select_book();
+                                    JavaSQL.select_book();
+                                    Rent.show();                                }
+                                else if(item==0){
+                                    break;
+                                }
+                                else{
+                                    System.out.println("invalid option");
+                                }
+                            }
+                        }
+                        else if (remove_input==0){
+                            break;
+                        }
+                        else{
+                            System.out.println("invalid option");
+                        }
+                    }
+                }
+                else if(input==4){
+                    while(true){
+                        search();
+                        int search_input = cli.nextInt();
+                        if (search_input==0){
+                            break;
+                        }
+                        else{
+                            Search.searchRequest(search_input);
+                        }
+                    }
+                }
+
+                else if(input==0){break;}
+                else {
                     System.out.print("invalid option");
                 }
             }
         }catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
     public static void main(String[] args) {
         new MainCli().run();

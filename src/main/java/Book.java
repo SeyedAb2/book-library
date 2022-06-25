@@ -1,5 +1,6 @@
 
 import java.io.*;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Book extends File implements Library,Serializable {
@@ -38,6 +39,16 @@ public class Book extends File implements Library,Serializable {
         Book book = null;
         for (Book bookItem : JavaSQL.Books) {
             if (bookItem.getBook_id() == book_id) {
+                book = bookItem;
+                break;
+            }
+        }
+        return book;
+    }
+    public static Book getBookByName(String book_name) {
+        Book book = null;
+        for (Book bookItem : JavaSQL.Books) {
+            if (Objects.equals(bookItem.getBookName(), book_name)) {
                 book = bookItem;
                 break;
             }
