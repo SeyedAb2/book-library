@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Book extends File implements Library,Serializable {
+public class Book extends JavaSQL implements Library,Serializable {
 
     private int Book_id;
     private String bookName;
