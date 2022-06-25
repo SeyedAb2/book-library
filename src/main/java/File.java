@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class File {
-    static String Base_url = "E:\\programming\\";
+    static String Base_url = "store\\";
     static String manager_url = Base_url + "Manager.txt";
     static String rent_url = Base_url + "Rent.txt";
     static String member_url = Base_url + "Member.txt";

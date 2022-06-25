@@ -42,7 +42,7 @@ public class Manager extends Entity {
                 Object_output.writeObject(memberItem);
             }
             Object_output.close();
-            System.out.println("files loaded");
+            System.out.println("file updated");
         } catch (IOException ex) {
             System.out.print(ex.getMessage());
         }
@@ -54,7 +54,7 @@ public class Manager extends Entity {
                 File.Managers.add(managerItem);
             }
         } catch (EOFException eof) {
-            System.out.println("end of files");
+            System.out.println("");
         } catch (IOException | ClassNotFoundException ex) {
             System.out.print("");
         }

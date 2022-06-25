@@ -72,7 +72,7 @@ public class Book extends File implements Library,Serializable {
                 object_output.writeObject(book);
             }
             object_output.close();
-            System.out.println("files loaded");
+            System.out.println("file updated");
         } catch (IOException ex) {
             System.out.print("");
         }
