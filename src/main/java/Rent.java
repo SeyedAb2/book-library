@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Rent extends File implements Library,Serializable {
+public class Rent extends JavaSQL implements Library,Serializable {
 
     private Book book;
     private Member member;
