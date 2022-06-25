@@ -2,9 +2,9 @@ import java.io.Serializable;
 
 public abstract class Entity extends File implements Serializable , Library {
     private String entityName;
-    private String entityNationalCode;
+    private int entityNationalCode;
 
-    public Entity(String entityName, String entityNationalCode) {
+    public Entity(String entityName, int entityNationalCode) {
         this.entityName = entityName;
         this.entityNationalCode = entityNationalCode;
     }
@@ -17,11 +17,11 @@ public abstract class Entity extends File implements Serializable , Library {
         this.entityName = entityName;
     }
 
-    public String getEntityNationalCode() {
+    public int getEntityNationalCode() {
         return entityNationalCode;
     }
 
-    public void setEntityNationalCode(String entityNationalCode) {
+    public void setEntityNationalCode(int entityNationalCode) {
         this.entityNationalCode = entityNationalCode;
     }
 }

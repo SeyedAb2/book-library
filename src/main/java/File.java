@@ -13,27 +13,26 @@ public class File {
 
     public static void save(Manager manager) {
         Managers.add(manager);
-        manager.insert();
     }
     public static void save(Member member) {
         Members.add(member);
-        member.insert();
+//        member.insert();
     }
     public static void save(Book book) {
         Books.add(book);
-        book.insert();
+//        book.insert();
     }
     public static void save(Rent rent) {
         Rents.add(rent);
-        rent.insert();
+//        rent.insert();
     }
     public static void remove(Manager manager) {
         Managers.remove(manager);
-        manager.insert();
+//        manager.write();
     }
     public static void remove(Member member) {
         Members.remove(member);
-        member.insert();
+//        member.insert();
         for (Rent rent: Rents){
             if (rent.getMember().equals(member))
                 Rent.remove(rent);
@@ -41,17 +40,16 @@ public class File {
     }
     public static void remove(Book book) {
         Books.remove(book);
-        book.insert();
+//        book.insert();
         for (Rent rent: Rents){
             if (rent.getBook().equals(book))
             {
                 Rent.remove(rent);
-                book.setBorrowBook(false);
             }
         }
     }
     public static void remove(Rent rent) {
         Rents.remove(rent);
-        rent.insert();
+//        rent.insert();
     }
 }
