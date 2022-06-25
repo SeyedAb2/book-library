@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public abstract class Entity extends File implements Serializable , Library {
+public abstract class Entity extends JavaSQL implements Serializable , Library {
     private String entityName;
     private int entityNationalCode;
 
